@@ -37,7 +37,35 @@
         - 많은 오픈 소스 프로젝트에서 어떠한 형태로든 버전 관리를 사용하고 있으므로
         - 코드의 특정 부분이 왜 그렇게 쓰여 졌는지 의미를 추적하기 위하여
 * git 외의 버전관리 시스템에는 무엇이 있나요? git은 그 시스템과 어떤 점이 다르며, 어떤 장점을 가지고 있나요?
+    - CSV (Concurrent Versions System)
+        - 가장 오래된 버전관리 시스템으로 많은 사용자들에게 검증되어 있는 시스템이다.
+        - posix계열의 장비는 물론 windows까지 대부분의 운영체제를 지원한다.
+    - SVN (Subversion)
+        - atomic commit을 지원함으로 소스 커밋 실패시 rollback이 보장됨
+        - 여러 파일을 한번에 커밋해도 한개의 revision이 올라가며 해당 revision으로 버전관리가 가능하다
+        - 트리별, 파일별로 접근 제어가 가능하다
 * git의 `clone`/`add`/`commit`/`push`/`pull`/`branch`/`stash` 명령은 무엇이며 어떨 때 이용하나요? 그리고 어떻게 사용하나요?
+    - clone
+        - 원격저장소를 복제하여 저장소를 생성함, 폴더명은 생략가능
+        - git clone <저장소주소> <폴더명>
+    - add
+        - git이 새 파일이라 인식하고 지켜보게 한다. add를 하게 되면 git의 저장소 'snapshot'에 포함된다.
+        - git add <파일명>
+    - commit
+        - 변경사항을 만든 후 저장소의 'snapshot'을 생성함.
+        - git commit -m <message>
+    - push
+        - 로컬 컴퓨터에서 작업하고 커밋을 원격 저장소에 저장하기 위한 명령여
+        - git push
+    - pull
+        - 로컬 컴퓨터에서 작업할 때 작업하고 있는 저장소의 최신버전으로 업데이트 하기 위해 사용하는 명령어
+        - git pull
+    - branch
+        - 여러 협업자와 작업할 때, 자신만의 저장소를 원할 때 사용함. 새로운 branch를 만들고 자신만의 변경사항과 파일 추가등의 커밋 타임라인을 만듦.
+        - git branch <repository nickname>
+    - stash
+        - unstaged 상태인 변경사항을 일시적으로 백업하고 작업디렉토리를 깨끗한 상태로 유지. 다시 이전 상태로 되돌리려면 git stash pop 명령어를 수행.
+        - git stash save || git stash pop
 
 ## Quest
 * github에 가입한 뒤, [이 커리큘럼의 github 저장소](https://github.com/KnowRe/WebDevCurriculum)의 우상단의 Fork 버튼을 눌러 자신의 저장소에 복사해 둡니다.
